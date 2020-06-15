@@ -3,7 +3,7 @@ import APIs from 'api';
 
 class AuthStore {
 	loading = true;
-	token = null;
+	token = '';
 	user = {};
 	alert = '';
 

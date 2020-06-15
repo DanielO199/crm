@@ -7,17 +7,17 @@ import { AuthStore } from 'stores';
 export default function RerouteLogged(Children) {
 	class RerouteLoggedComponent extends React.Component {
 		render() {
-			const { authenticated } = AuthStore;
+			const { token } = AuthStore;
 			return (
 				<div className='authComponent full-height'>
-					{authenticated ? (
+					{token ? (
 						<Redirect
 							to={{
-								pathname: '/home',
+								pathname: '/users',
 								state: { from: this.props.location }
 							}}
 						/>
-					) : !authenticated ? (
+					) : !token ? (
 						<Children {...this.props} />
 					) : null}
 				</div>

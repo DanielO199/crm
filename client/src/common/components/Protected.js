@@ -15,7 +15,7 @@ export default function Protected(Children) {
 					) : !token ? (
 						<Redirect
 							to={{
-								pathname: '/log-in',
+								pathname: '/login',
 								state: { from: this.props.location }
 							}}
 						/>
